@@ -1,0 +1,11 @@
+on: push
+name: Deploy the BIM Whale
+jobs:
+    web-deploy:
+        - name: Sync Files
+          uses: SamKirkland/FTP-Deploy-Action@4.0.0
+          with:
+              server: ftpcluster.loopia.se
+              username: bim-whale-github-actions-ftp
+              password: ${{ secrets.password }}
+              server-dir: public_html/
