@@ -152,7 +152,6 @@ function buildTable(dataSet) {
 
     // Child Row + JSON Viewer
     $("#ifcTable tbody").on("click", "td.details-control", function () {
-        console.log("child row");
         var tr = $(this).closest("tr");
         var row = ifcTable.row(tr);
 
