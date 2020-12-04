@@ -4,7 +4,8 @@ The public demo for [The BIM Whale](https://github.com/andrewisen/bim-whale) pro
 
 ## Usage
 
-Use the demo: [https://github.bimvalen.se/public/](https://github.bimvalen.se/public/)
+Use the demo:
+[https://github.bimvalen.se/public/](https://github.bimvalen.se/public/)
 
 ## TODO
 
