@@ -1,0 +1,11 @@
+# BIM Whale
+/dist
+
+# Generic
+makefile
+/.vscode
+/node_modules
+
+# MacOS generated files
+.DS_Store
+.DS_Store?
