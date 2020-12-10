@@ -37,13 +37,13 @@ function buildTable(dataSet) {
         Object.keys(entity.properties).forEach((propertySet) => {
             Object.keys(entity.properties[propertySet]).forEach((property) => {
                 dataSet2.push([
-                    entity.instanceId,
+                    entity.instanceName,
                     propertySet,
                     property,
                     entity.properties[propertySet][property],
                 ]);
                 dataSet3.push([
-                    entity.instanceId,
+                    entity.instanceName,
                     entity.attributes.parsed[0],
                     entity.entityName,
                     entity.attributes.parsed[2],
@@ -70,7 +70,7 @@ function buildTable(dataSet) {
             },
             {
                 title: "Id",
-                data: "instanceId",
+                data: "instanceName",
             },
             {
                 title: "GUID",
@@ -160,7 +160,7 @@ function buildTable(dataSet) {
             tr.removeClass("shown");
         } else {
             row.child(generateChildData(row.data())).show();
-            $("#" + row.data().instanceId).jsonViewer(row.data().properties, {
+            $(row.data().instanceName).jsonViewer(row.data().properties, {
                 collapsed: true,
                 rootCollapsable: false,
                 withLinks: false,

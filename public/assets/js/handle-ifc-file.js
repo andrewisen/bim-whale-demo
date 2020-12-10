@@ -41,8 +41,8 @@ function handleIfcFile() {
         const lines = fileReader.result.split(/\r\n|\n/);
         // N.B. The BIM Whale must be imported before this
         let ifcFile = new BIMWHALE.IfcFile(lines, config);
-        ifcFile.parseIfcFile();
-        buildTable(Object.values(ifcFile.entities.genericEntities)); // See: datatables.js
+        const ifcEntities = ifcFile.parseIfcFile();
+        buildTable(Object.values(ifcEntities)); // See: datatables.js
     };
     fileReader.readAsText(file);
     return false; // Prevent page reload
