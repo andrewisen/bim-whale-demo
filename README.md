@@ -1,15 +1,12 @@
 # The BIM Whale - Public Demo
 
-The public demo for [The BIM Whale](https://github.com/andrewisen/bim-whale) project.
+This is the public demo for [The BIM Whale Project](https://andrewisen.gitbook.io/bim-whale/).
+More info will come...
 
 ## Usage
 
 Use the demo:
 [https://github.bimvalen.se/public/](https://github.bimvalen.se/public/)
-
-### TODO
-
-More info will come...
 
 ## Contributing
 
