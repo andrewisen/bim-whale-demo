@@ -2,15 +2,20 @@ function handleIfcFile() {
     // Update local storage
     localStorage.setItem("ifcEntities", $("#ifcSelection").val());
     // Convert select2 selection(s) to uppercase
-    let selectedEntities = $("#ifcSelection")
+    let selectedEntities = {};
+    $("#ifcSelection")
         .val()
-        .map((entity) => {
-            return entity.toUpperCase();
+        .forEach((entity) => {
+            selectedEntities = {
+                ...selectedEntities,
+                [entity.toUpperCase()]: entity,
+            };
         });
 
     // Update local storage
     localStorage.setItem("ifcPropertySets", $("#propertySetsSelection").val());
     // Return select2 selection(s)
+
     let selectedPropertySets = $("#propertySetsSelection")
         .val()
         .map((entity) => {
@@ -18,13 +23,13 @@ function handleIfcFile() {
         });
 
     // Same as "config.ts"
-    const requiredEntities = [
-        "IFCPROPERTYSINGLEVALUE",
-        "IFCRELDEFINESBYPROPERTIES",
-        "IFCPROPERTYSET",
-    ];
+    const requiredEntities = {
+        IFCPROPERTYSINGLEVALUE: "IfcPropertySingleValue",
+        IFCRELDEFINESBYPROPERTIES: "IfcRelDefinesByProperties",
+        IFCPROPERTYSET: "IfcPropertySet",
+    };
     // Same as "config.ts"
-    const allEntities = [...requiredEntities, ...selectedEntities];
+    const allEntities = { ...requiredEntities, ...selectedEntities };
     // Same as "config.ts"
     const config = {
         requiredEntities: requiredEntities,
